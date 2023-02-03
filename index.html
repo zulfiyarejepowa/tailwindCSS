@@ -6,17 +6,52 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="style.css" />
-
+	
 	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 	<title>Landing page</title>
 </head>
 
 <body>
-	<header class="flex justify-between items-center px-[10%] py-[20px] lg:py-[35px] mb-[40px] lg:mb-[80px]">
-		<span class="font-medium text-2xl lg:text-4xl">Hello UI</span>
+	<header class="sticky bg-white top-0 flex justify-between items-center mb-[40px] px-[10%] py-[20px] lg:py-[35px] lg:mb-[80px] md:hidden">
+			<a class="font-medium p-2 text-2xl" href="#">HelloUI</a>
+			<ul id="menu"
+				class="hidden fixed top-0 right-0 px-10 py-10 mb-[20px] bg-slate-50 z-50 text-base sm:text-xl">
+				<li class="z-90 fixed top-2 right-2 3xm:top-4 3xm:right-4 2xm:top-4 2xm:right-10">
+					<a href="javascript:void(0)" class="text-right text-black text-[40px]"
+						onclick="Menu()">&times;</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Docs</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Tools</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Features</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Pricing</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Jobs</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Sing in</a>
+				</li>
+				<li class="m-[15px] justify-center text-center">
+					<a class="text-black hover:opacity-50" href="#">Try for Free</a>
+				</li>
+			</ul>
+			<!-- Open menu on mobile devices -->
+			<div class="flex items-center">
+				<button class="text-black text-4xl font-bold hover:opacity-50" onclick="Menu()">
+					&#9776; </button>
+	</header>
 
-		<nav>
+	<nav class="md2:hidden flex justify-between items-center mt-5 px-[10%] lg:py-[35px] lg:mb-[80px] mb-[40px]">
+		<span class="font-medium text-2xl lg:text-4xl">Hello UI</span>
+		<div>
 			<ul class="flex flex-col gap-y-[5px] items-center md:flex-row md:gap-x-[15px] lg:gap-x-[50px]">
 				<li><a href="#">Docs</a></li>
 				<li><a href="#">Tools</a></li>
@@ -24,35 +59,34 @@
 				<li><a href="#">Pricing</a></li>
 				<li><a href="#">Jobs</a></li>
 			</ul>
-		</nav>
-
-		<div class="flex items-center gap-x-[15px] lg:gap-x-[35px]">
+		</div>
+		<div class="flex items-center gap-x-4 lg:gap-x-[35px]">
 			<a href="#">Sign In</a>
 			<button
 				class="bg-main-blue text-white rounded-full px-[15px] py-[5px] transition-all border-2 hover:bg-white hover:text-main-blue hover:border-2 hover:border-main-blue lg:px-[35px] lg:py-[13px]">
 				Try for Free
 			</button>
 		</div>
-	</header>
+	</nav>
 
 	<main class="px-[10%]">
 		<section class="flex flex-col items-center justify-center md:flex-col md:items-center ">
-			<h1 class="text-6xl font-black text-center max-w-[950px] mb-[35px] md:text-8xl">Grow up your sells with us.
+			<h1 class="text-4xl font-black text-center max-w-[950px] mb-[35px] md:text-8xl">Grow up your sells with us.
 			</h1>
-			<p class="text-center max-w-[700px] mb-[40px] text-[#5B5E6D] text-2xl">
+			<p class="text-center max-w-[700px] mb-[40px] text-[#5B5E6D] text-base md:text-2xl">
 				Build one project that runs natively on all your term now users'
 				devices to turn for that you can do.
 			</p>
-			<div class="mb-[100px] flex gap-x-5">
+			<div class="mb-[20px] flex gap-x-5">
 				<button
-					class="bg-main-blue text-white rounded-full px-[35px] py-[13px]transition-all border-2 hover:bg-white hover:text-main-blue hover:border-2 hover:border-main-blue">
+					class="bg-main-blue text-white rounded-full px-[20px] py-[10px] md:px-[35px] md:py-[15px] transition-all border-2 hover:bg-white hover:text-main-blue hover:border-2 hover:border-main-blue">
 					Try for Free
 				</button>
-				<button class="bg-white text-main-blue shadow-md shadow-[#B0C9FD4D] rounded-full px-[35px] py-[13px]">
+				<button class="bg-white text-main-blue shadow-md shadow-[#B0C9FD4D] rounded-full hover:border-2 hover:text-main-blue hover:border-main-blue px-[20px] py-[10px] md:px-[35px] md:py-[15px]">
 					Discover in Video
 				</button>
 			</div>
-			<img src="./img/Group 14.svg" alt="Privory app screenshot">
+			<img src="./img/Group 14.svg" alt="Privory app screenshot" class="w-[500px] md:w-auto">
 		</section>
 
 		<section>
@@ -87,47 +121,47 @@
 			</button>
 		</section>
 
-		<section class="flex flex-col items-center justify-center mb-[50px] md:flex-row">
+		<section class="flex flex-col-reverse items-center justify-center mb-[50px] lg:flex-row">
 			<div>
-				<h2 class="text-7xl font-black m-[100px]">
+				<h2 class="text-5xl font-black m-[100px] md:text-7xl">
 					Develop
 				</h2>
-				<p class="m-[100px] text-[#5B5E6D] text-xl font-normal">
+				<p class="m-[100px] text-[#5B5E6D] text-lg font-normal md:text-xl">
 					Develop for all your users' devices with just one codebase. Add fast refresh, true native
 					capabilities,
 					and your creativity, and you'll have the app your users want in no time.
 				</p>
-				<a href="#" class="text-black underline text-[18px] m-[100px]">Learn more about spellon</a>
+				<a href="#" class="text-black underline underline-offset-4 decoration-2 decoration-[#0555FF] text-base md:text-lg m-[100px]">Learn more about spellon</a>
 			</div>
 			<img src="./img/develop.jpg" alt="develop">
 		</section>
 
-		<section class="flex flex-col items-center justify-center mb-[50px] md:flex-row">
+		<section class="flex flex-col items-center justify-center mb-[50px] lg:flex-row">
 			<img src="./img/build.jpg" alt="build">
 			<div>
-				<h2 class="text-7xl font-black m-[100px]">
+				<h2 class="text-5xl font-black m-[100px] md:text-7xl">
 					Build
 				</h2>
-				<p class="m-[100px] text-[#5B5E6D] text-xl font-normal">
+				<p class="m-[100px] text-[#5B5E6D] text-lg md:text-xl font-normal">
 					Develop for all your users' devices with just one codebase. Add fast refresh, true native
 					capabilities,
 					and your creativity, and you'll have the app your users want in no time.
 				</p>
-				<a href="#" class="text-black underline text-[18px] m-[100px]">Learn more about spellon</a>
+				<a href="#" class="text-black underline underline-offset-4 decoration-2 decoration-[#0555FF] text-base md:text-lg m-[100px]">Learn more about spellon</a>
 			</div>
 		</section>
 
-		<section class="flex flex-col items-center justify-center mb-[50px] md:flex-row">
+		<section class="flex flex-col-reverse items-center justify-center mb-[50px] lg:flex-row">
 			<div>
-				<h2 class="text-7xl font-black m-[100px]">
+				<h2 class="text-5xl font-black m-[100px] md:text-7xl">
 					Update
 				</h2>
-				<p class="m-[100px] text-[#5B5E6D] text-xl font-normal">
+				<p class="m-[100px] text-[#5B5E6D] text-lg md:text-xl font-normal">
 					Develop for all your users' devices with just one codebase. Add fast refresh, true native
 					capabilities,
 					and your creativity, and you'll have the app your users want in no time.
 				</p>
-				<a href="#" class="text-black underline text-[18px] m-[100px]">Learn more about spellon</a>
+				<a href="#" class="text-black underline underline-offset-4 decoration-2 decoration-[#0555FF] text-base md:text-lg m-[100px]">Learn more about spellon</a>
 			</div>
 			<img src="./img/update.jpg" alt="update">
 		</section>
@@ -138,7 +172,7 @@
 		<div class="flex flex-col items-center justify-center">
 			<h2 class="font-black text-4xl text-center max-w-[700px] mt-[100px] lg:text-7xl">
 				It’s easy to get started. Start now.</h2>
-			<div class="flex flex-row py-[30px] max-w-[350px] h-[100px] md:h-[125px] md:max-w-[850px]">
+			<div class="flex flex-row py-[30px] max-w-[300px] h-[100px] md:h-[125px] md:max-w-[850px]">
 				<input type="email" name="Email" placeholder="Enter your email"
 					class="border border-[#FFFFFF80] rounded-l bg-inherit py-[10px] px-[40px] w-[200px] md:w-[600px]">
 				<input type="submit" value="Get Started" class="bg-[#0555FF] py-[10px] md:px-[40px] rounded-r w-[150px] md:w-[200px]">
@@ -195,5 +229,14 @@
 		</div>
 	</footer>
 </body>
+
+<script>
+	var menu = document.getElementById('menu');
+	function Menu() {
+		menu.classList.toggle('hidden');
+		menu.classList.toggle('w-full');
+		menu.classList.toggle('h-screen');
+	}
+</script>
 
 </html>
